@@ -12,12 +12,12 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 	CHAR lpFinalCmdLine[512];
 	ZeroMemory(&lpFinalCmdLine, 512);
 
-	// TODO: Edit the parameters, make sure these is a space at the end of the string. 
-	LPSTR lpCustomCmdLine = "-mpq YourMpqName.mpq -race Human,Orc,Undead,NightElf,Naga,IceTroll,BloodElf ";
+	// TODO: Edit the parameters below, please make sure these is a space at the beginning of the string. 
+	LPSTR lpCustomCmdLine = " -mpq YourMpqName.mpq -race Human,Orc,Undead,NightElf,Naga,IceTroll,BloodElf ";
 
 	strcpy(lpFinalCmdLine, "Nirvana.exe ");
-	strcat(lpFinalCmdLine, lpCustomCmdLine);
 	strcat(lpFinalCmdLine, lpCmdLine);
+	strcat(lpFinalCmdLine, lpCustomCmdLine);
 
  	// Start the process
     if(!CreateProcess("Nirvana.exe", lpFinalCmdLine, NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi)) 
